@@ -13,6 +13,6 @@ const (
 var (
 	queryServerHost            = os.Getenv(queryServerHostEnvKey)
 	queryServerPort            = os.Getenv(queryServerPortEnvKey)
-	queryServiceHealthEndpoint = "/health"
+	queryServiceHealthEndpoint = "health"
 	QueryServiveHealthURL      = fmt.Sprintf(URL_FORMAT, queryServerHost, queryServerPort, queryServiceHealthEndpoint)
 )

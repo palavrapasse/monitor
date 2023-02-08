@@ -10,7 +10,9 @@ import (
 	"github.com/palavrapasse/monitor/internal/logging"
 )
 
-const WaitingSecondsBetweenHealthChecks = 600
+const WaitingSecondsBetweenHealthChecks = 2
+
+var WebServicesHeathURL = []string{http.QueryServiveHealthURL, http.SantosServiveHealthURL, http.SubscribeServiveHealthURL}
 
 func main() {
 
@@ -19,19 +21,13 @@ func main() {
 	logging.Aspirador.Trace("Starting Monitor Service")
 
 	for {
-		_, santosErr := http.GetSantosHealth()
-		if santosErr != nil {
-			logging.Aspirador.Error(santosErr.Error())
-		}
 
-		_, queryErr := http.GetQueryHealth()
-		if queryErr != nil {
-			logging.Aspirador.Error(queryErr.Error())
-		}
+		for _, url := range WebServicesHeathURL {
+			_, err := http.GetServiceHealth(url)
 
-		_, subscribeErr := http.GetSubscribeHealth()
-		if subscribeErr != nil {
-			logging.Aspirador.Error(subscribeErr.Error())
+			if err != nil {
+				logging.Aspirador.Error(err.Error())
+			}
 		}
 
 		logging.Aspirador.Trace(fmt.Sprintf("Waiting %d seconds...", WaitingSecondsBetweenHealthChecks))

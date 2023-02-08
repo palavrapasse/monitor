@@ -12,19 +12,7 @@ import (
 
 const URL_FORMAT = "%s:%s/%s"
 
-func GetSantosHealth() (pkg.HealthStatus, error) {
-	return getServiceHealth(SantosServiveHealthURL)
-}
-
-func GetQueryHealth() (pkg.HealthStatus, error) {
-	return getServiceHealth(QueryServiveHealthURL)
-}
-
-func GetSubscribeHealth() (pkg.HealthStatus, error) {
-	return getServiceHealth(SubscribeServiveHealthURL)
-}
-
-func getServiceHealth(url string) (pkg.HealthStatus, error) {
+func GetServiceHealth(url string) (pkg.HealthStatus, error) {
 	response, err := httpGetCallService(url)
 
 	if err != nil {
