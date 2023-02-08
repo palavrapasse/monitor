@@ -1,7 +1,3 @@
-# Server configuration
-server_host=0.0.0.0
-server_port=6060
-
 # Query Server configuration
 query_server_host=0.0.0.0
 query_server_port=8080
