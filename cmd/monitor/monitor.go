@@ -10,7 +10,7 @@ import (
 	"github.com/palavrapasse/monitor/internal/logging"
 )
 
-const WaitingSecondsBetweenHealthChecks = 2
+const WaitingSecondsBetweenHealthChecks = 600
 
 var WebServicesHeathURL = []string{http.QueryServiveHealthURL, http.SantosServiveHealthURL, http.SubscribeServiveHealthURL}
 
