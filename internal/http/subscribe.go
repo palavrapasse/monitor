@@ -14,5 +14,5 @@ var (
 	subscribeServerHost            = os.Getenv(subscribeServerHostEnvKey)
 	subscribeServerPort            = os.Getenv(subscribeServerPortEnvKey)
 	subscribeServiceHealthEndpoint = "health"
-	SubscribeServiveHealthURL      = fmt.Sprintf("%s:%s/%s", subscribeServerHost, subscribeServerPort, subscribeServiceHealthEndpoint)
+	SubscribeServiveHealthURL      = fmt.Sprintf(URL_FORMAT, subscribeServerHost, subscribeServerPort, subscribeServiceHealthEndpoint)
 )

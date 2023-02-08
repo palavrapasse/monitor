@@ -14,5 +14,5 @@ var (
 	santosServerHost            = os.Getenv(santosServerHostEnvKey)
 	santosServerPort            = os.Getenv(santosServerPortEnvKey)
 	santosServiceHealthEndpoint = "health"
-	SantosServiveHealthURL      = fmt.Sprintf("%s:%s/%s", santosServerHost, santosServerPort, santosServiceHealthEndpoint)
+	SantosServiveHealthURL      = fmt.Sprintf(URL_FORMAT, santosServerHost, santosServerPort, santosServiceHealthEndpoint)
 )

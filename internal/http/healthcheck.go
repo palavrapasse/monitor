@@ -10,6 +10,8 @@ import (
 	"github.com/palavrapasse/paramedic/pkg"
 )
 
+const URL_FORMAT = "%s:%s/%s"
+
 func GetSantosHealth() (pkg.HealthStatus, error) {
 	return getServiceHealth(SantosServiveHealthURL)
 }
