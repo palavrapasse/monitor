@@ -5,6 +5,8 @@ import (
 	"os"
 )
 
+const SubscribeServiceName = "subscribe"
+
 const (
 	subscribeServerHostEnvKey = "subscribe_server_host"
 	subscribeServerPortEnvKey = "subscribe_server_port"

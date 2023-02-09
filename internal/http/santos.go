@@ -5,6 +5,8 @@ import (
 	"os"
 )
 
+const SantosServiceName = "santos"
+
 const (
 	santosServerHostEnvKey = "santos_server_host"
 	santosServerPortEnvKey = "santos_server_port"

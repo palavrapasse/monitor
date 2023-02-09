@@ -5,6 +5,8 @@ import (
 	"os"
 )
 
+const QueryServiceName = "query"
+
 const (
 	queryServerHostEnvKey = "query_server_host"
 	queryServerPortEnvKey = "query_server_port"
