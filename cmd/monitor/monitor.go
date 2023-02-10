@@ -51,7 +51,7 @@ func validateResult(r pkg.HealthStatus) error {
 	}
 
 	if err != nil {
-		err = fmt.Errorf("%s (CPU percentage is %.2f and RAM percentage is %.2f)", err.Error(), r.CPUPercentage, r.RAMPercentage)
+		err = fmt.Errorf("%w (CPU percentage is %.2f and RAM percentage is %.2f)", err, r.CPUPercentage, r.RAMPercentage)
 	}
 
 	return err
